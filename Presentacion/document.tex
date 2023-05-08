@@ -1,0 +1,90 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usecolortheme{wolverine}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{animate}
+
+\title{Beamer Template}
+\author{TeXstudio Team}
+\institute{CIMAT}
+\date{6 de marzo de 2023}
+
+\begin{document}
+\begin{frame}[plain]
+    \maketitle
+\end{frame}
+\begin{frame}{Frame Title}
+\end{frame}
+
+
+\begin{frame}[plain,t]
+	\setbeamertemplate{background}{
+		\includegraphics[width= \paperwidth, height=\paperheight]{fondo}
+	}
+	\vskip 1cm
+	\huge{\textcolor{red}{ \textbf{Nueva diapositiva}}}
+	\vskip 1cm
+	ajckankl cjakc njkalc njakl ncjksdan cjkdsn cjkldsancjkldsnajkcldn sjkc ndsjkc nsjkdan cjkdslncjklsdn cjkldns jkcn dsjklcndjska cnjksdlcnsdkjl.
+\end{frame}
+
+\begin{frame}{Figuras}
+	\begin{figure}
+		\foreach \i in {1,2,...,5}{
+			\includegraphics[width=3cm]{\i}
+		}
+	\end{figure}
+\end{frame}
+
+\section{tikz}
+\include{figuras}
+
+
+%\begin{frame}{Gráficas 2D}
+%	\begin{tikzpicture}
+%		\begin{axis}
+%			\addplot[domain= -10:10, samples= 100, color = red]{x^2};
+%			\addlegendentry{Cudr\'atica}
+%			\addplot[domain= -10:10, samples= 100, color = blue]{x^3+3*x+1};
+%			\addlegendentry{C\'ubica}
+%		\end{axis}
+%	\end{tikzpicture}
+%\end{frame}
+%
+%\begin{frame}{Gráficas 3D}
+%	\begin{tikzpicture}
+%		\begin{axis}
+%			\addplot3[surf, samples = 50, domain = -5:5]{x^2+y^2};
+%		\end{axis}
+%	\end{tikzpicture}
+%\end{frame}
+%
+%\begin{frame}{Gráficas 3D}
+%	\begin{tikzpicture}
+%		\begin{axis}
+%			\addplot3[mesh, samples = 25, domain = -5:5]{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)};
+%		\end{axis}
+%	\end{tikzpicture}
+%\end{frame}
+
+\begin{frame}{Animaciones}
+	\begin{tikzpicture}
+		\draw(0,0) circle[radius = 1];
+		\draw(10,0) circle[radius = 1];
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Animaciones}
+	\begin{animateinline}[autoplay]{15}
+		%\foreach \i in {1,2,...,10}{
+		\multiframe{10}{iContador=1+1}{
+		\begin{tikzpicture}
+			\node (A) at (-1,0){};
+			\draw(\iContador,0) circle[radius = 1];
+			\draw(10,0) circle[radius = 1];
+		\end{tikzpicture}
+		}
+	\end{animateinline}
+\end{frame}
+\end{document}
